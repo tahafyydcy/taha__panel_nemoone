@@ -1,0 +1,2170 @@
+کد , [11/07/1404 11:48 ق.ظ]
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استودیو طراحی وب پیشرو(طراح طاها)  - ورژن 28</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            direction: rtl;
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* تم روز */
+        body.light-theme {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            color: #1e293b;
+        }
+
+        /* هدر و ناوبری */
+        .header {
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.95), rgba(26, 26, 46, 0.95));
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        body.light-theme .header {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.95));
+            border-bottom-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4ade80, #22d3ee, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .version-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #1e1e1e;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.light-theme .nav-link {
+            color: #1e293b;
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            color: #1e1e1e;
+            transform: translateY(-2px);
+        }
+
+        /* هیرو سکشن */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(74, 222, 128, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+.hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #4ade80, #22d3ee, #8b5cf6, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.2); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #a1a1aa;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body.light-theme .hero p {
+            color: #64748b;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            color: #1e1e1e;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(74, 222, 128, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #4ade80;
+            border: 2px solid #4ade80;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #4ade80;
+            color: #1e1e1e;
+            transform: translateY(-4px);
+        }
+
+        /* آمار زنده */
+        .live-stats {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(45, 45, 45, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 4rem auto;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        body.light-theme .live-stats {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.8));
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #a1a1aa;
+            font-weight: 500;
+        }
+
+        body.light-theme .stat-label {
+            color: #64748b;
+        }
+
+        /* جستجو و فیلتر */
+        .search-filter {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .search-box {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(45, 45, 45, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+body.light-theme .search-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.8));
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(74, 222, 128, 0.3);
+            border-radius: 12px;
+            background: rgba(30, 30, 30, 0.5);
+            color: #f5f5f5;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        body.light-theme .search-input {
+            background: rgba(255, 255, 255, 0.8);
+            color: #1e293b;
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #4ade80;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 8px;
+            background: transparent;
+            color: #4ade80;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #4ade80;
+            color: #1e1e1e;
+        }
+
+        /* نمونه سایت‌ها */
+        .samples-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .sample-card {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(45, 45, 45, 0.9));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        body.light-theme .sample-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .sample-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .sample-card:hover::before {
+            left: 100%;
+        }
+
+        .sample-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(74, 222, 128, 0.2);
+            border-color: #4ade80;
+        }
+
+        .sample-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .sample-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4ade80;
+        }
+
+        .sample-price {
+            background: linear-gradient(135deg, #22d3ee, #8b5cf6);
+            color: #1e1e1e;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+.sample-preview {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sample-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+
+        body.light-theme .feature-item {
+            color: #64748b;
+        }
+
+        .feature-icon {
+            color: #4ade80;
+        }
+
+        .sample-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-sample {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-preview {
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            color: #1e1e1e;
+        }
+
+        .btn-order {
+            background: transparent;
+            color: #4ade80;
+            border: 1px solid #4ade80;
+        }
+
+        .btn-sample:hover {
+            transform: translateY(-2px);
+        }
+
+        /* چت آنلاین */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 1000;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #1e1e1e;
+            box-shadow: 0 8px 32px rgba(74, 222, 128, 0.4);
+            transition: all 0.3s ease;
+            animation: chatPulse 2s infinite;
+        }
+
+        @keyframes chatPulse {
+            0% { box-shadow: 0 8px 32px rgba(74, 222, 128, 0.4); }
+            50% { box-shadow: 0 8px 32px rgba(74, 222, 128, 0.8); }
+            100% { box-shadow: 0 8px 32px rgba(74, 222, 128, 0.4); }
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-panel {
+            position: fixed;
+            bottom: 90px;
+            left: 2rem;
+            width: 350px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(45, 45, 45, 0.95));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 16px;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        body.light-theme .chat-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            color: #1e1e1e;
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .chat-input-area {
+            padding: 1rem;
+            border-top: 1px solid rgba(74, 222, 128, 0.2);
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 8px;
+            background: rgba(30, 30, 30, 0.5);
+            color: #f5f5f5;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+body.light-theme .chat-input {
+            background: rgba(255, 255, 255, 0.8);
+            color: #1e293b;
+        }
+
+        /* دکمه‌های شناور */
+        .floating-buttons {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-toggle {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1e1e1e;
+        }
+
+        .scroll-top {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* فرم‌ها */
+        .form-section {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .form-container {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(45, 45, 45, 0.9));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        body.light-theme .form-container {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(74, 222, 128, 0.3);
+            border-radius: 12px;
+            background: rgba(30, 30, 30, 0.5);
+            color: #f5f5f5;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        body.light-theme .form-input,
+        body.light-theme .form-select,
+        body.light-theme .form-textarea {
+            background: rgba(255, 255, 255, 0.8);
+            color: #1e293b;
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #4ade80;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* نوتیفیکیشن */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+            z-index: 1001;
+            max-width: 400px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 8px 32px rgba(239, 68, 68, 0.4);
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+/* مودال */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(45, 45, 45, 0.95));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        body.light-theme .modal-content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #ef4444;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* پنل‌های مخفی */
+        .hidden-panel {
+            display: none;
+        }
+
+        .panel-visible {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        /* دکمه‌های اکشن */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-register {
+            background: linear-gradient(135deg, #4ade80, #22d3ee);
+            color: #1e1e1e;
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+
+        .btn-admin {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #1e1e1e;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .samples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chat-panel {
+                width: calc(100vw - 2rem);
+                left: 1rem;
+                right: 1rem;
+            }
+            
+            .floating-buttons {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .notification {
+                top: 1rem;
+                right: 1rem;
+                left: 1rem;
+                max-width: none;
+            }
+        }
+
+        /* انیمیشن‌ها */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+.animate-fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر و ناوبری -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                🚀 وب استودیو 
+                <span class="version-badge">v28</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">خانه</a></li>
+                    <li class="nav-item"><a href="#samples" class="nav-link">نمونه کارها</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">خدمات</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">درباره ما</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- هیرو سکشن -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>طراحی وب‌سایت حرفه‌ای</h1>
+            <p>با بیش از 10 سال تجربه، بهترین وب‌سایت‌ها را برای کسب‌وکار شما طراحی می‌کنیم</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSamples()">مشاهده نمونه کارها</button>
+                <button class="btn-secondary" onclick="openChat()">مشاوره رایگان</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- آمار زنده -->
+    <section class="live-stats">
+        <div class="stat-item">
+            <span class="stat-number" id="liveVisitors">1,247</span>
+            <span class="stat-label">بازدیدکننده امروز</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="liveOrders">0</span>
+            <span class="stat-label">سفارش ثبت شده</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="liveProjects">156</span>
+            <span class="stat-label">پروژه تکمیل شده</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="liveSatisfaction">98%</span>
+            <span class="stat-label">رضایت مشتریان</span>
+        </div>
+    </section>
+
+    <!-- جستجو و فیلتر -->
+    <section class="search-filter" id="samples">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="جستجو در نمونه سایت‌ها..." id="searchInput" onkeyup="searchSamples()">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterSamples('all')">همه</button>
+                <button class="filter-btn" onclick="filterSamples('ecommerce')">فروشگاهی</button>
+                <button class="filter-btn" onclick="filterSamples('corporate')">شرکتی</button>
+                <button class="filter-btn" onclick="filterSamples('blog')">وبلاگ</button>
+                <button class="filter-btn" onclick="filterSamples('portfolio')">نمونه کار</button>
+                <button class="filter-btn" onclick="filterSamples('restaurant')">رستوران</button>
+                <button class="filter-btn" onclick="filterSamples('education')">آموزشی</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- نمونه سایت‌ها -->
+    <section class="samples-section">
+        <h2 class="section-title">نمونه کارهای ما</h2>
+        <div class="samples-grid" id="samplesGrid">
+            <!-- نمونه سایت‌ها اینجا بارگذاری می‌شوند -->
+        </div>
+    </section>
+
+    <!-- دکمه‌های اکشن -->
+    <div class="action-buttons">
+        <button class="action-btn btn-register" onclick="toggleUserRegister()">ثبت نام کاربر</button>
+        <button class="action-btn btn-login" onclick="toggleUserLogin()">ورود کاربر</button>
+        <button class="action-btn btn-admin" onclick="toggleLogin()">ورود مدیر</button>
+    </div>
+
+کد , [11/07/1404 11:48 ق.ظ]
+<!-- فرم‌های مخفی -->
+    <div class="form-section">
+        <!-- پنل ثبت نام -->
+        <div class="hidden-panel" id="userRegisterPanel">
+            <div class="form-container">
+                <h3 style="color: #4ade80; margin-bottom: 2rem; text-align: center; font-size: 2rem;">ثبت نام کاربر جدید</h3>
+                <form onsubmit="handleUserRegister(event)">
+                    <div class="form-group">
+                        <label class="form-label">نام و نام خانوادگی:</label>
+                        <input type="text" class="form-input" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">ایمیل:</label>
+                        <input type="email" class="form-input" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">شماره تماس:</label>
+                        <input type="tel" class="form-input" id="registerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">رمز عبور:</label>
+                        <input type="password" class="form-input" id="registerPassword" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">تکرار رمز عبور:</label>
+                        <input type="password" class="form-input" id="confirmPassword" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">ثبت نام</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- پنل ورود کاربر -->
+        <div class="hidden-panel" id="userLoginPanel">
+            <div class="form-container">
+                <h3 style="color: #22d3ee; margin-bottom: 2rem; text-align: center; font-size: 2rem;">ورود کاربر</h3>
+                <form onsubmit="handleUserLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label">ایمیل:</label>
+                        <input type="email" class="form-input" id="userLoginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">رمز عبور:</label>
+                        <input type="password" class="form-input" id="userLoginPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; background: linear-gradient(135deg, #22d3ee, #8b5cf6);">ورود</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- پنل ورود مدیر -->
+        <div class="hidden-panel" id="loginPanel">
+            <div class="form-container">
+                <h3 style="color: #f59e0b; margin-bottom: 2rem; text-align: center; font-size: 2rem;">ورود مدیر</h3>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label">ایمیل:</label>
+                        <input type="email" class="form-input" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">رمز عبور:</label>
+                        <input type="password" class="form-input" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; background: linear-gradient(135deg, #f59e0b, #d97706);">ورود</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- پنل کاربر -->
+
+کد , [11/07/1404 11:48 ق.ظ]
+<div class="hidden-panel" id="userPanel">
+            <div class="form-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h3 style="color: #22d3ee; margin: 0; font-size: 2rem;">پنل کاربری</h3>
+                    <button class="action-btn" onclick="userLogout()" style="background: #ef4444; color: white;">خروج</button>
+                </div>
+                <div id="userDashboard">
+                    <!-- محتوای پنل کاربر اینجا بارگذاری می‌شود -->
+                </div>
+            </div>
+        </div>
+
+        <!-- پنل مدیریت -->
+        <div class="hidden-panel" id="adminPanel">
+            <div class="form-container" style="background: linear-gradient(135deg, #0f172a, #1e293b); border: 1px solid rgba(245, 158, 11, 0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h3 style="color: #f59e0b; margin: 0; font-size: 2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">🚀 پنل مدیریت - ورژن 28</h3>
+                    <button class="action-btn" onclick="logout()" style="background: #ef4444; color: white;">خروج</button>
+                </div>
+                <div id="adminDashboard">
+                    <!-- محتوای پنل مدیر اینجا بارگذاری می‌شود -->
+                </div>
+            </div>
+        </div>
+
+        <!-- فرم سفارش عمومی -->
+        <div class="form-container" id="orderForm">
+            <h3 style="color: #4ade80; margin-bottom: 2rem; text-align: center; font-size: 2rem;">ثبت سفارش جدید</h3>
+            <form onsubmit="handleOrder(event)">
+                <div class="form-group">
+                    <label class="form-label">نام و نام خانوادگی:</label>
+                    <input type="text" class="form-input" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">ایمیل:</label>
+                    <input type="email" class="form-input" id="customerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">شماره تماس:</label>
+                    <input type="tel" class="form-input" id="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">نوع سفارش:</label>
+                    <select class="form-select" id="orderType" required>
+                        <option value="">انتخاب کنید...</option>
+                        <option value="فروشگاه آنلاین">فروشگاه آنلاین</option>
+                        <option value="سایت شرکتی">سایت شرکتی</option>
+                        <option value="وبلاگ شخصی">وبلاگ شخصی</option>
+                        <option value="سایت رستوران">سایت رستوران</option>
+                        <option value="پلتفرم آموزشی">پلتفرم آموزشی</option>
+                        <option value="نمونه کار">نمونه کار</option>
+                        <option value="اپلیکیشن وب">اپلیکیشن وب</option>
+                        <option value="سایت خبری">سایت خبری</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">بودجه مورد نظر (تومان):</label>
+                    <input type="text" class="form-input" id="orderBudget" placeholder="مثال: 5,000,000" oninput="formatBudget(this)">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">توضیحات سفارش:</label>
+                    <textarea class="form-textarea" id="orderDescription" placeholder="جزئیات سفارش خود را اینجا بنویسید..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">ثبت سفارش</button>
+            </form>
+        </div>
+    </div>
+
+کد , [11/07/1404 11:48 ق.ظ]
+<!-- چت آنلاین -->
+    <div class="chat-widget">
+        <button class="chat-button" onclick="toggleChat()">💬</button>
+        <div class="chat-panel" id="chatPanel">
+            <div class="chat-header">
+                <div>پشتیبانی آنلاین - v28</div>
+                <button onclick="toggleChat()" style="background: none; border: none; color: #1e1e1e; float: left;">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div style="background: rgba(74, 222, 128, 0.1); padding: 0.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    سلام! به ورژن 28 خوش آمدید! چطور می‌تونم کمکتون کنم؟
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <input type="text" class="chat-input" placeholder="پیام خود را بنویسید..." id="chatInput" onkeypress="handleChatEnter(event)" style="flex: 1; margin: 0;">
+                    <button onclick="sendChatFromButton()" style="background: linear-gradient(135deg, #4ade80, #22d3ee); color: #1e1e1e; border: none; padding: 0.75rem 1rem; border-radius: 8px; cursor: pointer; font-family: 'Vazirmatn', sans-serif; font-weight: 600;">ارسال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- دکمه‌های شناور -->
+    <div class="floating-buttons">
+        <button class="floating-btn theme-toggle" onclick="toggleTheme()" title="تغییر تم">
+            <span id="themeIcon">🌙</span>
+        </button>
+        <button class="floating-btn scroll-top" onclick="scrollToTop()" title="بازگشت به بالا" id="scrollTopBtn">
+            ↑
+        </button>
+    </div>
+
+    <!-- نوتیفیکیشن -->
+    <div class="notification" id="notification"></div>
+
+    <!-- مودال -->
+    <div class="modal" id="sampleModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalContent">
+                <!-- محتوای مودال اینجا بارگذاری می‌شود -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // متغیرهای سراسری
+        let isLoggedIn = false;
+        let isUserLoggedIn = false;
+        let currentUser = null;
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        let currentTheme = localStorage.getItem('theme') || 'dark';
+        let visitCount = parseInt(localStorage.getItem('visitCount')) || 1247;
+        let chatOpen = false;
+        let chatMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+        let unreadChats = 0;
+        const version = '28.0.0';
+
+        // نمونه سایت‌ها
+        const sampleSites = {
+            ecommerce: [
+                {
+                    id: 'shop1',
+                    title: '🛒 فروشگاه مدرن',
+                    category: 'ecommerce',
+                    price: '15,000,000 تومان',
+                    deliveryTime: '2 هفته',
+                    rating: 4.9,
+                    features: ['سبد خرید هوشمند', 'پرداخت آنلاین', 'مدیریت موجودی', 'پنل کاربری', 'سیستم تخفیف', 'پیگیری سفارش'],
+                    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+                    description: 'فروشگاه آنلاین کامل با تمام امکانات مدرن',
+                    demo: `
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 12px; color: white;">
+                            <h2 style="margin: 0 0 1rem 0; text-align: center;">🛒 فروشگاه آنلاین مدرن</h2>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+
+کد , [11/07/1404 11:48 ق.ظ]
+<h4>📱 گوشی هوشمند</h4>
+                                    <p style="color: #4ade80; font-weight: bold;">15٬000٬000 تومان</p>
+                                    <button style="background: #4ade80; color: #1e1e1e; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">افزودن به سبد</button>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4>💻 لپ تاپ گیمینگ</h4>
+                                    <p style="color: #4ade80; font-weight: bold;">35٬000٬000 تومان</p>
+                                    <button style="background: #4ade80; color: #1e1e1e; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">افزودن به سبد</button>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <button style="background: #22d3ee; color: #1e1e1e; border: none; padding: 0.75rem 2rem; border-radius: 8px; cursor: pointer; font-weight: bold;">🛒 مشاهده سبد خرید (2 کالا)</button>
+                            </div>
+                        </div>
+                    
+                }
+            ],
+            corporate: [
+                {
+                    id: 'corp1',
+                    title: '🏢 شرکت فناوری',
+                    category: 'corporate',
+                    price: '8,000,000 تومان',
+                    deliveryTime: '1 هفته',
+                    rating: 4.7,
+                    features: ['صفحه معرفی', 'نمایش خدمات', 'تیم و کارمندان', 'اخبار و مقالات'],
+                    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+                    description: 'وب‌سایت حرفه‌ای شرکت با طراحی مدرن',
+                    demo: 
+                        <div style="background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); padding: 2rem; border-radius: 12px; color: white;">
+                            <h2 style="margin: 0 0 1rem 0; text-align: center;">🏢 شرکت فناوری پیشرو</h2>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4>🚀 خدمات ما</h4>
+                                    <ul style="margin: 0; padding-right: 1rem;">
+                                        <li>توسعه نرم‌افزار</li>
+                                        <li>طراحی وب‌سایت</li>
+                                        <li>مشاوره فنی</li>
+                                    </ul>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4>📊 آمار شرکت</h4>
+                                    <p>✅ +500 پروژه موفق</p>
+                                    <p>👥 +200 مشتری راضی</p>
+                                    <p>🏆 10 سال تجربه</p>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            ]
+        };
+
+        // بارگذاری اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadSamples();
+            startLiveCounters();
+            showVersionNotification();
+        });
+
+        // راه‌اندازی اپلیکیشن
+        function initializeApp() {
+            // اعمال تم ذخیره شده
+            if (currentTheme === 'light') {
+                document.body.classList.add('light-theme');
+                document.getElementById('themeIcon').textContent = '☀️';
+
+کد , [11/07/1404 11:48 ق.ظ]
+}
+            
+            // افزایش شمارنده بازدید
+            visitCount++;
+            localStorage.setItem('visitCount', visitCount);
+            
+            // نمایش دکمه اسکرول
+            window.addEventListener('scroll', handleScroll);
+            
+            // انیمیشن‌های اسکرول
+            observeElements();
+        }
+
+        // نمایش اعلان ورژن جدید
+        function showVersionNotification() {
+            const lastVersion = localStorage.getItem('lastVersion');
+            if (lastVersion !== version) {
+                setTimeout(() => {
+                    showNotification(🎉 به ورژن ${version} خوش آمدید! ویژگی‌های جدید اضافه شد, 'success');
+                    localStorage.setItem('lastVersion', version);
+                }, 2000);
+            }
+        }
+
+        // بارگذاری نمونه سایت‌ها
+        function loadSamples() {
+            const samplesGrid = document.getElementById('samplesGrid');
+            let html = '';
+            
+            Object.values(sampleSites).flat().forEach(site => {
+                html += createSampleCard(site);
+            });
+            
+            samplesGrid.innerHTML = html;
+        }
+
+        // ایجاد کارت نمونه سایت
+        function createSampleCard(site) {
+            return 
+                <div class="sample-card animate-fade-in" data-category="${site.category}">
+                    <div class="sample-header">
+                        <h3 class="sample-title">${site.title}</h3>
+                        <div class="sample-price">${site.price}</div>
+                    </div>
+                    
+                    <div class="sample-preview">
+                        ${site.demo}
+                    </div>
+                    
+                    <div class="sample-features">
+                        ${site.features.slice(0, 4).map(feature => 
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>${feature}</span>
+                            </div>
+                        ).join('')}
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #f59e0b;">⭐</span>
+                            <span>${site.rating}</span>
+                        </div>
+                        <div style="color: #a1a1aa; font-size: 0.9rem;">
+                            ⏱️ ${site.deliveryTime}
+                        </div>
+                    </div>
+                    
+                    <div class="sample-actions">
+                        <button class="btn-sample btn-preview" onclick="showSampleModal('${site.id}')">
+                            پیش‌نمایش زنده
+                        </button>
+                        <button class="btn-sample btn-order" onclick="orderSample('${site.id}')">
+                            سفارش این سایت
+                        </button>
+                    </div>
+                </div>
+            ;
+        }
+
+        // نمایش مودال نمونه سایت
+        function showSampleModal(siteId) {
+            const site = Object.values(sampleSites).flat().find(s => s.id === siteId);
+            if (!site) return;
+            
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <h2 style="color: #4ade80; margin-bottom: 2rem; text-align: center;">${site.title}</h2>
+                
+                ${site.demo}
+                
+                <div style="background: ${currentTheme === 'light' ? '#f8fafc' : '#2a2a2a'}; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+
+کد , [11/07/1404 11:48 ق.ظ]
+<h3 style="color: #4ade80; margin-bottom: 1rem;">ویژگی‌های کامل:</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                        ${site.features.map(feature => 
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: #4ade80;">✓</span>
+                                <span>${feature}</span>
+                            </div>
+                        ).join('')}
+                    </div>
+                    
+                    <h4 style="color: #22d3ee; margin-bottom: 0.5rem;">تکنولوژی‌های استفاده شده:</h4>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                        ${site.technologies.map(tech => 
+                            <span style="background: #4ade80; color: #1e1e1e; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">${tech}</span>
+                        ).join('')}
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                        <div>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #4ade80;">${site.price}</div>
+                            <div style="color: #a1a1aa; font-size: 0.9rem;">قیمت</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #22d3ee;">${site.deliveryTime}</div>
+                            <div style="color: #a1a1aa; font-size: 0.9rem;">زمان تحویل</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #f59e0b;">⭐ ${site.rating}</div>
+                            <div style="color: #a1a1aa; font-size: 0.9rem;">امتیاز</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn-primary" onclick="orderSample('${site.id}')">سفارش این سایت</button>
+                    <button class="btn-secondary" onclick="openTelegramChat()">💬 چت در تلگرام</button>
+                    <button class="btn-secondary" onclick="closeModal()">بستن</button>
+                </div>
+            ;
+            
+            document.getElementById('sampleModal').style.display = 'flex';
+            showNotification(پیش‌نمایش ${site.title} نمایش داده شد, 'success');
+        }
+
+        // سفارش نمونه سایت
+        function orderSample(siteId) {
+            const site = Object.values(sampleSites).flat().find(s => s.id === siteId);
+            if (!site) return;
+            
+            closeModal();
+            
+            // پر کردن فرم سفارش
+            document.getElementById('orderType').value = site.title;
+            document.getElementById('orderDescription').value = می‌خواهم ${site.title} مشابه نمونه‌ای که دیدم طراحی کنید.\n\nویژگی‌های مورد نظر:\n${site.features.map(f => • ${f}).join('\n')};
+            
+            // اسکرول به فرم
+            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+            
+            showNotification(فرم سفارش برای ${site.title} آماده شد`, 'success');
+        }
+
+        // جستجو در نمونه سایت‌ها
+        function searchSamples() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.sample-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+
+کد , [11/07/1404 11:48 ق.ظ]
+if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.classList.add('animate-fade-in');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // فیلتر نمونه سایت‌ها
+        function filterSamples(category) {
+            const cards = document.querySelectorAll('.sample-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // به‌روزرسانی دکمه‌ها
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // فیلتر کارت‌ها
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.classList.add('animate-fade-in');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // شمارنده‌های زنده
+        function startLiveCounters() {
+            // شمارنده بازدیدکنندگان
+            setInterval(() => {
+                const current = parseInt(document.getElementById('liveVisitors').textContent.replace(/,/g, ''));
+                const newCount = current + Math.floor(Math.random() * 3);
+                document.getElementById('liveVisitors').textContent = newCount.toLocaleString();
+            }, 5000);
+            
+            // به‌روزرسانی آمار سفارشات
+            document.getElementById('liveOrders').textContent = orders.length;
+            
+            // شمارنده پروژه‌ها
+            setInterval(() => {
+                const current = parseInt(document.getElementById('liveProjects').textContent);
+                if (Math.random() > 0.7) {
+                    document.getElementById('liveProjects').textContent = current + 1;
+                }
+            }, 30000);
+        }
+
+        // چت آنلاین
+        function toggleChat() {
+            const chatPanel = document.getElementById('chatPanel');
+            chatOpen = !chatOpen;
+            chatPanel.style.display = chatOpen ? 'flex' : 'none';
+            
+            if (chatOpen) {
+                loadChatHistory();
+                document.getElementById('chatInput').focus();
+            }
+        }
+
+        function handleChatEnter(event) {
+            if (event.key === 'Enter') {
+                const input = document.getElementById('chatInput');
+                const message = input.value.trim();
+                if (message) {
+                    sendChatMessage(message);
+                    input.value = '';
+                }
+            }
+        }
+
+        function sendChatFromButton() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message) {
+                sendChatMessage(message);
+                input.value = '';
+            }
+        }
+
+        function sendChatMessage(message) {
+            const chatMessage = {
+                id: Date.now(),
+                message: message,
+                sender: 'user',
+                timestamp: new Date().toLocaleString('fa-IR'),
+                isRead: false,
+                userInfo: currentUser ? {
+                    name: currentUser.name,
+                    email: currentUser.email
+                } : {
+                    name: 'کاربر مهمان',
+                    email: 'guest@unknown.com'
+                }
+            };
+            
+            chatMessages.push(chatMessage);
+            localStorage.setItem('chatMessages', JSON.stringify(chatMessages));
+            
+            addChatMessage(message, 'user');
+            
+            // نمایش پیام خودکار اولیه
+            setTimeout(() => {
+
+کد , [11/07/1404 11:48 ق.ظ]
+const autoReply = {
+                    id: Date.now() + 1,
+                    message: 'پیام شما دریافت شد! مدیر سایت به زودی پاسخ خواهد داد. ⏰',
+                    sender: 'system',
+                    timestamp: new Date().toLocaleString('fa-IR'),
+                    isRead: true
+                };
+                
+                chatMessages.push(autoReply);
+                localStorage.setItem('chatMessages', JSON.stringify(chatMessages));
+                addChatMessage(autoReply.message, 'system');
+                
+                // اگر مدیر لاگین است، به‌روزرسانی پنل
+                if (isLoggedIn) {
+                    updateAdminChatNotification();
+                }
+            }, 1000);
+        }
+
+        function addChatMessage(message, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            
+            let bgColor, textColor, marginSide;
+            if (sender === 'user') {
+                bgColor = '#4ade80';
+                textColor = '#1e1e1e';
+                marginSide = 'left';
+            } else if (sender === 'admin') {
+                bgColor = '#22d3ee';
+                textColor = '#1e1e1e';
+                marginSide = 'right';
+            } else {
+                bgColor = 'rgba(139, 92, 246, 0.2)';
+                textColor = currentTheme === 'light' ? '#1e293b' : '#f5f5f5';
+                marginSide = 'right';
+            }
+            
+            messageDiv.style.cssText = 
+                background: ${bgColor};
+                color: ${textColor};
+                padding: 0.75rem;
+                border-radius: 12px;
+                margin-bottom: 0.75rem;
+                margin-${marginSide}: 2rem;
+                word-wrap: break-word;
+                line-height: 1.4;
+                font-size: 0.9rem;
+            ;
+            messageDiv.textContent = message;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function loadChatHistory() {
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.innerHTML = 
+                <div style="background: rgba(74, 222, 128, 0.1); padding: 0.75rem; border-radius: 12px; margin-bottom: 1rem; text-align: center;">
+                    🎉 سلام! به ورژن ${version} خوش آمدید!<br>
+                    چطور می‌تونم کمکتون کنم؟
+                </div>
+            ;
+            
+            // بارگذاری پیام‌های قبلی برای کاربر فعلی
+            const currentUserEmail = currentUser ? currentUser.email : 'guest@unknown.com';
+            const userMessages = chatMessages.filter(msg => 
+                msg.userInfo.email === currentUserEmail
+            );
+            
+            userMessages.forEach(msg => {
+                if (msg.sender === 'user' || msg.sender === 'admin' || msg.sender === 'system') {
+                    addChatMessage(msg.message, msg.sender);
+                }
+            });
+            
+            // اگر پیام جدید مدیر وجود دارد، نمایش نوتیفیکیشن
+            const unreadAdminMessages = userMessages.filter(msg => 
+                msg.sender === 'admin' && !msg.isRead
+            );
+            
+            if (unreadAdminMessages.length > 0) {
+                // علامت‌گذاری به عنوان خوانده شده
+                chatMessages.forEach(msg => {
+                    if (msg.userInfo.email === currentUserEmail && msg.sender === 'admin') {
+                        msg.isRead = true;
+                    }
+                });
+                localStorage.setItem('chatMessages', JSON.stringify(chatMessages));
+                
+                showNotification(${unreadAdminMessages.length} پیام جدید از مدیر دریافت شد!, 'success');
+            }
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+function updateAdminChatNotification() {
+            unreadChats = chatMessages.filter(msg => !msg.isRead && msg.sender === 'user').length;
+            
+            // به‌روزرسانی نوتیفیکیشن در پنل مدیر
+            if (isLoggedIn) {
+                const chatNotification = document.getElementById('adminChatNotification');
+                if (chatNotification) {
+                    chatNotification.textContent = unreadChats > 0 ? (${unreadChats}) : '';
+                }
+            }
+        }
+
+        // باز کردن چت تلگرام
+        function openTelegramChat() {
+            window.open('https://t.me/taha_gti6', '_blank', 'noopener,noreferrer');
+            showNotification('چت تلگرام باز شد', 'success');
+        }
+
+        // اسکرول به بخش نمونه کارها
+        function scrollToSamples() {
+            document.getElementById('samples').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // باز کردن چت
+        function openChat() {
+            toggleChat();
+        }
+
+        // تغییر تم
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (currentTheme === 'dark') {
+                body.classList.add('light-theme');
+                themeIcon.textContent = '☀️';
+                currentTheme = 'light';
+                showNotification('تم روز فعال شد', 'success');
+            } else {
+                body.classList.remove('light-theme');
+                themeIcon.textContent = '🌙';
+                currentTheme = 'dark';
+                showNotification('تم شب فعال شد', 'success');
+            }
+            
+            localStorage.setItem('theme', currentTheme);
+        }
+
+        // اسکرول به بالا
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // مدیریت اسکرول
+        function handleScroll() {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }
+
+        // مشاهده عناصر برای انیمیشن
+        function observeElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.sample-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // نمایش نوتیفیکیشن
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = notification ${type};
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+        }
+
+        // بستن مودال
+        function closeModal() {
+            document.getElementById('sampleModal').style.display = 'none';
+        }
+
+        // نمایش/مخفی کردن پنل‌ها
+        function togglePanel(panelId) {
+            // بستن همه پنل‌ها
+            document.querySelectorAll('.hidden-panel').forEach(panel => {
+                panel.classList.remove('panel-visible');
+                panel.classList.add('hidden-panel');
+            });
+            
+            // نمایش پنل انتخاب شده
+            const panel = document.getElementById(panelId);
+            if (panel) {
+                panel.classList.remove('hidden-panel');
+                panel.classList.add('panel-visible');
+                panel.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function toggleUserRegister() {
+            togglePanel('userRegisterPanel');
+        }
+
+کد , [11/07/1404 11:48 ق.ظ]
+function toggleUserLogin() {
+            togglePanel('userLoginPanel');
+        }
+
+        function toggleLogin() {
+            togglePanel('loginPanel');
+        }
+
+        // ثبت نام کاربر
+        function handleUserRegister(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('registerName').value.trim();
+            const email = document.getElementById('registerEmail').value.trim();
+            const phone = document.getElementById('registerPhone').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                showNotification('رمز عبور و تکرار آن یکسان نیستند!', 'error');
+                return;
+            }
+            
+            if (users.find(user => user.email === email)) {
+                showNotification('کاربری با این ایمیل قبلاً ثبت نام کرده است!', 'error');
+                return;
+            }
+            
+            const newUser = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                phone: phone,
+                password: password,
+                registerDate: new Date().toLocaleDateString('fa-IR'),
+                isActive: true,
+                version: version
+            };
+            
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            showNotification(${name} عزیز، ثبت نام شما با موفقیت انجام شد!, 'success');
+            event.target.reset();
+            
+            // نمایش پنل ورود
+            setTimeout(() => {
+                toggleUserLogin();
+                document.getElementById('userLoginEmail').value = email;
+            }, 1000);
+        }
+
+        // ورود کاربر
+        function handleUserLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('userLoginEmail').value.trim();
+            const password = document.getElementById('userLoginPassword').value.trim();
+            
+            let user = users.find(user => user.email === email && user.password === password);
+            
+            if (!user) {
+                const oldOrder = orders.find(order => order.email === email);
+                if (oldOrder && password === oldOrder.phone) {
+                    user = {
+                        name: oldOrder.name,
+                        email: oldOrder.email,
+                        phone: oldOrder.phone,
+                        registerDate: oldOrder.date || 'قبل از سیستم جدید',
+                        version: 'legacy'
+                    };
+                }
+            }
+            
+            if (user) {
+                isUserLoggedIn = true;
+                currentUser = user;
+                
+                document.getElementById('userLoginPanel').classList.add('hidden-panel');
+                document.getElementById('userPanel').classList.add('panel-visible');
+                
+                loadUserDashboard();
+                showNotification(${user.name} عزیز، خوش آمدید!, 'success');
+                event.target.reset();
+            } else {
+                showNotification('ایمیل یا رمز عبور اشتباه است!', 'error');
+            }
+        }
+
+        // ورود مدیر
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+            
+            if (email === 'tahacodm667788@gmail.com' && password === 'SsTtAa9097') {
+                isLoggedIn = true;
+
+کد , [11/07/1404 11:48 ق.ظ]
+function sendAdminReply(userEmail) {
+            const inputId = 'adminReply' + userEmail.replace(/[^a-zA-Z0-9]/g, '');
+            const replyInput = document.getElementById(inputId);
+            const message = replyInput.value.trim();
+            
+            if (!message) {
+                showNotification('لطفاً پیام خود را وارد کنید', 'error');
+                return;
+            }
+            
+            const replyMessage = {
+                id: Date.now(),
+                message: message,
+                sender: 'admin',
+                timestamp: new Date().toISOString(),
+                isRead: false,
+                userInfo: {
+                    name: 'مدیر سایت',
+                    email: userEmail
+                }
+            };
+            
+            chatMessages.push(replyMessage);
+            localStorage.setItem('chatMessages', JSON.stringify(chatMessages));
+            
+            replyInput.value = '';
+            showAdminChats(); // بروزرسانی نمایش
+            showNotification('پاسخ شما ارسال شد', 'success');
+        }
+
+        // علامت‌گذاری چت به عنوان خوانده شده
+        function markChatAsRead(userEmail) {
+            chatMessages.forEach(msg => {
+                if (msg.userInfo?.email === userEmail && msg.sender === 'user') {
+                    msg.isRead = true;
+                }
+            });
+            
+            localStorage.setItem('chatMessages', JSON.stringify(chatMessages));
+            showAdminChats(); // بروزرسانی نمایش
+            showNotification('پیام‌ها به عنوان خوانده شده علامت‌گذاری شدند', 'success');
+        }
+
+        // نمایش سفارشات مدیر
+        function showAdminOrders() {
+            const dashboard = document.getElementById('adminDashboard');
+            
+            let ordersHtml = 
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #f59e0b; margin-bottom: 1rem;">📋 مدیریت سفارشات</h4>
+                    <button class="btn-secondary" onclick="loadAdminDashboard()" style="margin-bottom: 1rem;">← بازگشت</button>
+                </div>
+            ;
+            
+            if (orders.length === 0) {
+                ordersHtml += 
+                    <div style="text-align: center; padding: 2rem; color: #a1a1aa;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+                        <p>هیچ سفارشی وجود ندارد</p>
+                    </div>
+                ;
+            } else {
+                orders.forEach((order, index) => {
+                    ordersHtml += `
+                        <div style="background: rgba(45, 45, 45, 0.5); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div>
+                                    <strong style="color: #4ade80;">نام:</strong> ${order.name}<br>
+                                    <strong style="color: #22d3ee;">ایمیل:</strong> ${order.email}
+                                </div>
+                                <div>
+                                    <strong style="color: #8b5cf6;">تلفن:</strong> ${order.phone}<br>
+                                    <strong style="color: #f59e0b;">نوع:</strong> ${order.type}
+                                </div>
+                                <div>
+                                    <strong style="color: #ef4444;">تاریخ:</strong> ${order.date}<br>
+                                    <strong style="color: #10b981;">وضعیت:</strong> ${order.status || 'در حال بررسی'}
+                                </div>
+                            </div>
+                            <div style="margin-top: 1rem; padding: 1rem; background: rgba(74, 222, 128, 0.1); border-radius: 8px;">
+
+کد , [11/07/1404 11:48 ق.ظ]
+const groupedChats = {};
+            
+            chatMessages.forEach(msg => {
+                const userEmail = msg.userInfo?.email || 'unknown';
+                if (!groupedChats[userEmail]) {
+                    groupedChats[userEmail] = [];
+                }
+                groupedChats[userEmail].push(msg);
+            });
+            
+            let chatsHtml = 
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #f59e0b; margin-bottom: 1rem;">💬 مدیریت چت‌ها</h4>
+                    <button class="btn-secondary" onclick="loadAdminDashboard()" style="margin-bottom: 1rem;">← بازگشت</button>
+                </div>
+            ;
+            
+            if (Object.keys(groupedChats).length === 0) {
+                chatsHtml += 
+                    <div style="text-align: center; padding: 2rem; color: #a1a1aa;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
+                        <p>هیچ پیامی وجود ندارد</p>
+                    </div>
+                ;
+            } else {
+                Object.entries(groupedChats).forEach(([userEmail, messages]) => {
+                    const userMessages = messages.filter(msg => msg.sender === 'user');
+                    const lastMessage = userMessages[userMessages.length - 1];
+                    const hasUnread = userMessages.some(msg => !msg.isRead);
+                    
+                    if (userMessages.length === 0) return;
+                    
+                    const userName = lastMessage?.userInfo?.name || 'کاربر ناشناس';
+                    
+                    chatsHtml += 
+                        <div style="background: rgba(45, 45, 45, 0.5); border: 1px solid ${hasUnread ? '#f59e0b' : 'rgba(74, 222, 128, 0.2)'}; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div>
+                                    <div style="font-weight: 600; color: #22d3ee;">${userName}</div>
+                                    <div style="font-size: 0.9rem; color: #a1a1aa;">${userEmail}</div>
+                                </div>
+                                <div style="font-size: 0.9rem; color: #a1a1aa;">${new Date(lastMessage.timestamp).toLocaleString('fa-IR')}</div>
+                            </div>
+                            
+                            <div style="background: rgba(74, 222, 128, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-right: 4px solid #4ade80;">
+                                <strong>آخرین پیام:</strong><br>
+                                ${lastMessage.message}
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <input type="text" placeholder="پاسخ شما..." id="adminReply${userEmail.replace(/[^a-zA-Z0-9]/g, '')}" style="flex: 1; padding: 0.75rem; border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 8px; background: rgba(30, 30, 30, 0.5); color: #f5f5f5; font-family: 'Vazirmatn', sans-serif;">
+                                <button onclick="sendAdminReply('${userEmail}')" class="btn-primary" style="padding: 0.75rem 1.5rem;">ارسال پاسخ</button>
+                                ${hasUnread ? <button onclick="markChatAsRead('${userEmail}')" class="btn-secondary" style="padding: 0.75rem 1rem;">علامت‌گذاری خوانده شده</button> : ''}
+                            </div>
+                        </div>
+                    ;
+                });
+            }
+            
+            dashboard.innerHTML = chatsHtml;
+        }
+
+        // ارسال پاسخ مدیر
+
+کد , [11/07/1404 11:48 ق.ظ]
+// بستن پنل ورود
+                document.getElementById('loginPanel').classList.remove('panel-visible');
+                document.getElementById('loginPanel').classList.add('hidden-panel');
+                
+                // نمایش پنل مدیر
+                document.getElementById('adminPanel').classList.remove('hidden-panel');
+                document.getElementById('adminPanel').classList.add('panel-visible');
+                
+                // بارگذاری داشبورد فوری
+                loadAdminDashboard();
+                
+                showNotification(خوش آمدید! وارد پنل مدیریت ورژن ${version} شدید, 'success');
+                event.target.reset();
+            } else {
+                showNotification('ایمیل یا رمز عبور اشتباه است!', 'error');
+            }
+        }
+
+        // بارگذاری داشبورد کاربر
+        function loadUserDashboard() {
+            const dashboard = document.getElementById('userDashboard');
+            const userOrders = orders.filter(order => order.email === currentUser.email);
+            
+            dashboard.innerHTML = 
+                <div style="text-align: center; padding: 2rem;">
+                    <h4 style="color: #4ade80; margin-bottom: 1rem;">خوش آمدید ${currentUser.name}!</h4>
+                    <p>شما ${userOrders.length} سفارش ثبت شده دارید.</p>
+                    <button class="btn-primary" onclick="toggleChat()" style="margin-top: 1rem;">💬 شروع چت با پشتیبانی</button>
+                </div>
+            ;
+        }
+
+        // بارگذاری داشبورد مدیر
+        function loadAdminDashboard() {
+            const dashboard = document.getElementById('adminDashboard');
+            
+            dashboard.innerHTML = 
+                <div style="text-align: center; padding: 2rem;">
+                    <h4 style="color: #f59e0b; margin-bottom: 2rem;">پنل مدیریت ساده</h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                        <div style="background: rgba(74, 222, 128, 0.1); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.3);">
+                            <div style="font-size: 2rem; font-weight: bold; color: #4ade80;">${orders.length}</div>
+                            <div>کل سفارشات</div>
+                        </div>
+                        <div style="background: rgba(34, 211, 238, 0.1); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(34, 211, 238, 0.3);">
+                            <div style="font-size: 2rem; font-weight: bold; color: #22d3ee;">${users.length}</div>
+                            <div>کاربران ثبت نام شده</div>
+                        </div>
+                        <div style="background: rgba(245, 158, 11, 0.1); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.3);">
+                            <div style="font-size: 2rem; font-weight: bold; color: #f59e0b;">${chatMessages.filter(msg => !msg.isRead && msg.sender === 'user').length}</div>
+                            <div>پیام‌های جدید</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn-primary" onclick="showAdminChats()">💬 مدیریت چت‌ها</button>
+                        <button class="btn-primary" onclick="showAdminOrders()">📋 مدیریت سفارشات</button>
+                        <button class="btn-primary" onclick="showAdminUsers()">👥 مدیریت کاربران</button>
+                    </div>
+                </div>
+            ;
+        }
+
+        // نمایش چت‌های مدیر
+        function showAdminChats() {
+            const dashboard = document.getElementById('adminDashboard');
+
+کد , [11/07/1404 11:48 ق.ظ]
+id: Date.now(),
+                name: name,
+                email: email,
+                phone: phone,
+                type: type,
+                budget: budget,
+                description: description,
+                date: new Date().toLocaleDateString('fa-IR'),
+                status: 'در حال بررسی'
+            };
+            
+            orders.push(newOrder);
+            localStorage.setItem('orders', JSON.stringify(orders));
+            
+            // به‌روزرسانی آمار
+            document.getElementById('liveOrders').textContent = orders.length;
+            
+            showNotification(${name} عزیز، سفارش شما با موفقیت ثبت شد!, 'success');
+            event.target.reset();
+            
+            // اسکرول به بالا
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // فرمت کردن بودجه
+        function formatBudget(input) {
+            let value = input.value.replace(/[^\d]/g, '');
+            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            input.value = value;
+        }
+
+        // بستن مودال با کلیک خارج از آن
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('sampleModal');
+            if (modal && event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9885ea1ab57be451',t:'MTc1OTQyNjA4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+کد , [11/07/1404 11:48 ق.ظ]
+<strong>توضیحات:</strong><br>
+                                ${order.description}
+                            </div>
+                        </div>
+                    ;
+                });
+            }
+            
+            dashboard.innerHTML = ordersHtml;
+        }
+
+        // نمایش کاربران مدیر
+        function showAdminUsers() {
+            const dashboard = document.getElementById('adminDashboard');
+            
+            let usersHtml = 
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #f59e0b; margin-bottom: 1rem;">👥 مدیریت کاربران</h4>
+                    <button class="btn-secondary" onclick="loadAdminDashboard()" style="margin-bottom: 1rem;">← بازگشت</button>
+                </div>
+            ;
+            
+            if (users.length === 0) {
+                usersHtml += 
+                    <div style="text-align: center; padding: 2rem; color: #a1a1aa;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">👥</div>
+                        <p>هیچ کاربری ثبت نام نکرده است</p>
+                    </div>
+                ;
+            } else {
+                users.forEach((user, index) => {
+                    usersHtml += 
+                        <div style="background: rgba(45, 45, 45, 0.5); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div>
+                                    <strong style="color: #4ade80;">نام:</strong> ${user.name}<br>
+                                    <strong style="color: #22d3ee;">ایمیل:</strong> ${user.email}
+                                </div>
+                                <div>
+                                    <strong style="color: #8b5cf6;">تلفن:</strong> ${user.phone}<br>
+                                    <strong style="color: #f59e0b;">تاریخ عضویت:</strong> ${user.registerDate}
+                                </div>
+                                <div>
+                                    <strong style="color: #10b981;">وضعیت:</strong> ${user.isActive ? 'فعال' : 'غیرفعال'}<br>
+                                    <strong style="color: #ef4444;">ورژن:</strong> ${user.version || 'قدیمی'}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            dashboard.innerHTML = usersHtml;
+        }
+
+        // خروج کاربر
+        function userLogout() {
+            isUserLoggedIn = false;
+            currentUser = null;
+            
+            document.getElementById('userPanel').classList.add('hidden-panel');
+            showNotification('از حساب کاربری خارج شدید', 'success');
+        }
+
+        // خروج مدیر
+        function logout() {
+            isLoggedIn = false;
+            
+            document.getElementById('adminPanel').classList.add('hidden-panel');
+            showNotification('از پنل مدیریت خارج شدید', 'success');
+        }
+
+        // ثبت سفارش
+        function handleOrder(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('customerName').value.trim();
+            const email = document.getElementById('customerEmail').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const type = document.getElementById('orderType').value;
+            const budget = document.getElementById('orderBudget').value.trim();
+            const description = document.getElementById('orderDescription').value.trim();
+            
+            const newOrder = {
